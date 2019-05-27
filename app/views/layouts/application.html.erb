@@ -5,11 +5,40 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+  <section id = "home">
+    <div class="sidebar">
+      <div class="logo">
+        <%= link_to root_path do %>
+          <%= image_tag 'logo.png' %>
+        <% end %>
+      </div>
+      <ul>
+        <li class="category">
+          <i class="fa fa-bomb"></i> 
+          <span>WebSite<span>
+        </li>
+        <li>
+          <i class="fa fa-book"></i> 
+          <span>Blog<span>
+        </li>
+        <li>
+          <i class="fa fa-file"></i> 
+          <span>About<span>
+        </li>
+      </ul>
+    </div>
+    <div class="content">
+      <nav>
+        Blog Ruby
+      </nav>
+      <%= yield %>
+    </div>
+  </section>
   </body>
 </html>
