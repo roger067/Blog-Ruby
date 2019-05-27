@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
 @import "font-awesome";
-$dark_blue: #343756;
+$dark_blue: #303f66;
 $pink: #f44950;
 $purple: #3b25de;
 $grey: #A8AAFB;
@@ -23,10 +23,12 @@ body {
 
 .sidebar {
     max-width: 200px;
+    min-width: 160px;
     height: 100vh;
-    background: $light_grey;
+    background: $white;
     padding: 2rem 0;
     flex-grow: 1;
+    z-index: 2;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.16);
     .logo {
         text-align: center;
@@ -45,15 +47,14 @@ body {
             font-size: 1rem;
             font-weight: 600;
             text-transform: uppercase;
-            padding: 1rem 1.2rem;
+            padding: .6rem 1.2rem;
             transition: .3s;
             &:hover {
-                background: $pink;
-                color: $white !important;
+                border-left: 4px solid $pink;
             }
             i {
                 margin-right: 1rem;
-                color: $dark_blue;
+                color: $pink;
             }
         }
     }
@@ -61,12 +62,55 @@ body {
 
 .content {
     flex-grow: 9;
+    background: $light_grey;
 }
 
 nav {
     width: 100%;
-    padding: 1rem 2rem;
-    background: $light_grey;
+    padding: .5rem 2rem;
+    background: $dark_blue;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .title {
+        font-family: 'Nunito', sans-serif;
+        color: #FFF;
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+    ul {
+        padding-inline-start: 0px;
+        list-style-type: none;
+        li {
+            font-family: 'Nunito', sans-serif;
+            font-size: 14px;
+            color: $white;
+            display: inline;
+            margin-right: 1.5rem;
+            &:last-child {
+                margin-right: 0;
+            }
+            a,
+            button {
+                color: $white;
+                text-decoration: none;
+                background: $pink;
+                padding: .5rem 1.5rem;
+                border-radius: 20px;
+                box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+                font-weight: 700;
+            }
+            button {
+                font-family: 'Nunito', sans-serif;
+                font-size: 14px;
+                border: none;
+            }
+        }
+    }
+}
+
+.container {
+    padding: 0 2rem;
 }
 
 @media (max-width: 578px) {
