@@ -2,6 +2,16 @@
 <div class="divisor"></div>
 
 <%= form_for :post, url: posts_path do |f|%>
+    <% if @post.errors.any? %>
+        <div class= "error">
+            <h3><%= pluralize(@post.errors.count, "error") %> prevented this post from saving</h3>
+            <ul>
+                <% @post.errors.full_messages.each do |msg| %>
+                    <li><%= msg %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
     <div class="form-group">
         <%= f.label :title %>
         <%= f.text_field :title %>

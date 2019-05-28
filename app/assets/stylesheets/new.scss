@@ -1,12 +1,13 @@
 $dark_blue: #303f66;
 $pink: #f44950;
+$alert: #f8d7da;
 $purple: #3b25de;
 $grey: #9596fa;
 $light_grey: #f5f6fa;
 $white: #FFF;
 h1 {
     color: $dark_blue;
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Raleway', sans-serif;
     margin-block-start: 2em;
     margin-block-end: 0.2em;
 }
@@ -19,11 +20,31 @@ h1 {
 form {
     width: 100%;
     margin-top: 3rem;
+    .error {
+        width: 100%;
+        background: $alert;
+        border-left: 4px solid $pink;
+        padding: .5rem 1rem;
+        h3 {
+            color: $pink;
+            font-family: 'Raleway', sans-serif;
+            margin-block-start: 0;
+            margin-block-end: 0;
+        }
+        ul {
+            padding-inline-start: 20px;
+            margin-block-end: 0;
+        }
+        ul li {
+            color: #777;
+            line-height: 1.5;
+        }
+    }
     .form-group {
         margin: 1rem 0;
         label {
             color: #777;
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Raleway', sans-serif;
             font-size: 1.2rem;
         }
         input,
@@ -35,7 +56,7 @@ form {
             margin-top: .5rem;
             border-radius: .5rem;
             font-size: 1rem;
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Raleway', sans-serif;
             color: #777;
             &:focus {
                 outline-offset: 0;
@@ -49,7 +70,7 @@ form {
             width: 10rem;
             display: inline-block;
             color: $white;
-            font-family: 'Nunito', sans-serif;
+            font-family: 'Raleway', sans-serif;
             font-size: 16px;
             border: none;
             text-decoration: none;
