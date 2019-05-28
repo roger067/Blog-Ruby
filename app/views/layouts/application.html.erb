@@ -2,10 +2,9 @@
 <html>
   <head>
     <title>Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -20,7 +19,7 @@
       </div>
       <ul>
         <li class="category">
-          <i class="fa fa-bomb"></i> 
+          <i class="fa fa-home"></i> 
           <span>WebSite<span>
         </li>
         <li>
@@ -33,19 +32,22 @@
         </li>
       </ul>
     </div>
-    <div class="content">
+    <div class="content">   
       <nav>
         <div class="title">
           All Posts
         </div>
         <ul class="button-list">
-          <li><%= link_to 'Novo Post', new_post_path %></li>
+          <li class = "hide-mobile"><%= link_to 'Novo Post', new_post_path %></li>
           <li><button class="button">Log Out</button></li>
         </ul>
       </nav>
       <div class="container">
         <%= yield %>
       </div>
+      <% flash.each do |name, msg| %>
+        <%= content_tag(:div, msg , class: "alert") %>
+      <% end %>
     </div>
   </section>
   </body>

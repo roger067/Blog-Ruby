@@ -1,15 +1,16 @@
 <h1>New Post</h1>
+<div class="divisor"></div>
 
 <%= form_for :post, url: posts_path do |f|%>
-    <p>
+    <div class="form-group">
         <%= f.label :title %>
         <%= f.text_field :title %>
-    </p>
-    <p>
+    </div>
+    <div class="form-group">
         <%= f.label :body %>
         <%= f.text_area :body %>
-    </p>
-    <p>
-        <%= f.submit %>
-    </p>
+    </div>
+    <div class="form-group">
+        <%= f.submit "Submit Post", class: "btn-submit" %>
+    </div>
 <% end %>

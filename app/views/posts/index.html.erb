@@ -1,3 +1,4 @@
+<%= link_to 'Novo Post', new_post_path, class: "btn-default text-center hide-desktop" %>
 <% @posts.each do |post| %>
     <div class="post-wrapper">
         <h2 class="title"><%= link_to post.title, post %></h2>

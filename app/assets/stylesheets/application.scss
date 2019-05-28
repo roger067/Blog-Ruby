@@ -1,11 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
+@import url("posts.scss");
+@import url("new.scss");
+@import url("show.scss");
 @import "font-awesome";
+//Variáveis
 $dark_blue: #303f66;
 $pink: #f44950;
 $purple: #3b25de;
 $grey: #A8AAFB;
 $light_grey: #f5f6fa;
 $white: #FFF;
+//Style
 * {
     box-sizing: border-box;
 }
@@ -22,12 +27,10 @@ body {
 }
 
 .sidebar {
-    max-width: 200px;
-    min-width: 160px;
+    width: 200px;
     height: 100vh;
     background: $white;
     padding: 2rem 0;
-    flex-grow: 1;
     z-index: 2;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.16);
     .logo {
@@ -48,6 +51,7 @@ body {
             font-weight: 600;
             text-transform: uppercase;
             padding: .6rem 1.2rem;
+            margin-bottom: 1rem;
             transition: .3s;
             &:hover {
                 border-left: 4px solid $pink;
@@ -61,13 +65,13 @@ body {
 }
 
 .content {
-    flex-grow: 9;
+    width: calc(100% - 200px);
     background: $light_grey;
 }
 
 nav {
     width: 100%;
-    padding: .5rem 2rem;
+    padding: 1rem 2rem;
     background: $dark_blue;
     display: flex;
     align-items: center;
@@ -79,7 +83,9 @@ nav {
         font-weight: 700;
     }
     ul {
-        padding-inline-start: 0px;
+        padding-inline-start: 0;
+        margin-block-start: 0;
+        margin-block-end: 0;
         list-style-type: none;
         li {
             font-family: 'Nunito', sans-serif;
@@ -113,19 +119,26 @@ nav {
     padding: 0 2rem;
 }
 
+.text-center {
+    text-align: center;
+}
+
 @media (max-width: 578px) {
     .sidebar {
-        max-width: 100px;
+        width: 80px;
+        padding: 0;
         ul {
-            padding: 0 1.3rem;
+            padding: 0 .8rem;
             li {
                 display: block;
                 background: $white;
                 text-align: center;
                 border-radius: 20px;
+                padding: 1rem 0;
                 box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.16);
                 margin-bottom: 1rem;
                 i {
+                    color: $pink;
                     font-size: 20px;
                     margin-right: 0;
                 }
@@ -134,5 +147,17 @@ nav {
                 }
             }
         }
+    }
+    .content {
+        width: calc(100% - 80px);
+    }
+    .hide-mobile {
+        display: none;
+    }
+}
+
+@media(min-width: 578px) {
+    .hide-desktop {
+        display: none;
     }
 }
