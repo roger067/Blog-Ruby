@@ -18,24 +18,26 @@
         <% end %>
       </div>
       <ul>
-        <li class="category">
-          <i class="fa fa-home"></i> 
-          <span>WebSite<span>
-        </li>
         <li>
           <i class="fa fa-book"></i> 
-          <span>Blog<span>
+          <%= link_to 'Blog', root_path %>
         </li>
         <li>
           <i class="fa fa-file"></i> 
-          <span>About<span>
+          <%= link_to 'About', about_path %>
         </li>
       </ul>
     </div>
     <div class="content">   
       <nav>
         <div class="title">
+        <% if current_page?(root_path) %>
           All Posts
+        <% elsif current_page?(about_path) %>
+          About
+        <% else %>
+          <%= link_to 'Back to Home', root_path%>
+        <% end %>
         </div>
         <ul class="button-list">
           <li class = "hide-mobile"><%= link_to 'Novo Post', new_post_path %></li>
