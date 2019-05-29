@@ -39,10 +39,12 @@
           <%= link_to 'Back to Home', root_path%>
         <% end %>
         </div>
-        <ul class="button-list">
-          <li class = "hide-mobile"><%= link_to 'Novo Post', new_post_path %></li>
-          <li><button class="button">Log Out</button></li>
-        </ul>
+        <% if user_signed_in? %>
+          <ul class="button-list">
+            <li class = "hide-mobile"><%= link_to 'Novo Post', new_post_path %></li>
+            <li><%= link_to("Log Out", destroy_user_session_path, method: :delete) %></li>
+          </ul>
+        <% end %>
       </nav>
       <div class="container">
         <%= yield %>
